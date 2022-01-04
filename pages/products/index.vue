@@ -34,13 +34,13 @@
 import CheckBox from "~/components/CheckBox.vue";
 import ProductCard from "~/components/ProductCard.vue";
 import ThinLine from "~/components/ThinLine.vue";
-import products from "~/db/products";
+import products_en from "~/db/en/products";
 
 export default {
   components: { ThinLine, CheckBox, ProductCard },
   data() {
     return {
-      productList: products,
+      productList: products_en,
     };
   },
 
