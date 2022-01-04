@@ -1,5 +1,9 @@
 const en = Object.freeze({
     productInventory: 'Product Inventory',
+    languages: {
+        english: 'English',
+        french: 'French'
+    },
     filters: {
         title: 'Filters',
         type: {
