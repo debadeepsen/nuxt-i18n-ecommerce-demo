@@ -15,11 +15,9 @@
 </template>
 
 <script>
-import ThinLine from "~/components/ThinLine.vue";
 import products_en from "~/db/en/products";
 
 export default {
-  components: { ThinLine },
   data() {
     return {
       product: products_en.find((p) => p.id == this.$route.params.product),
@@ -31,18 +29,10 @@ export default {
       title: this.product.title,
     };
   },
-
-  mounted() {
-    // hacky code, because the scoped style below doesn't seem to be working
-    document.querySelector("body").style.background = "#eee";
-  },
 };
 </script>
 
 <style scoped>
-body {
-  background: #eee;
-}
 
 .main-container {
   width: 80%;
@@ -50,6 +40,7 @@ body {
   background: #fff;
   box-shadow: 2px 2px 8px #3333;
   padding: 20px;
+  padding-top: 70px;
 }
 
 .details {

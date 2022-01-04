@@ -24,7 +24,7 @@ export default {
   padding: 10px;
   margin-right: 20px;
   margin-bottom: 20px;
-  box-shadow: 1px 1px 3px 1px #2222;
+  box-shadow: 1px 1px 3px #2222;
   transition: all 0.2s;
   text-align: center;
   text-decoration: none;
@@ -33,6 +33,7 @@ export default {
 
 .product-card:hover {
   transform: scale(1.1);
+  box-shadow: 3px 3px 5px 1px #2224;
 }
 
 h5 {
