@@ -26,7 +26,7 @@ header {
   font-size: 2.2rem;
 }
 
-a {
+a { 
   color: inherit;
   text-decoration: none;
   display: flex;

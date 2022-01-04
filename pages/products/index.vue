@@ -46,12 +46,12 @@ export default {
 }
 
 .filter-col {
-  width: 20%;
+  width: 16%;
   padding: auto 20px;
 }
 
 .product-grid-col {
-  width: 80%;
+  width: 84%;
   padding-left: 30px;
 }
 
