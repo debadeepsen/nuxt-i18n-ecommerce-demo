@@ -9,15 +9,18 @@
         <h2>{{ product.title }}</h2>
         <div>{{ product.description }}</div>
         <div class="price">${{ product.price }}</div>
+        <button>Add to cart</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ThinLine from "~/components/ThinLine.vue";
 import products_en from "~/db/en/products";
 
 export default {
+  components: { ThinLine },
   data() {
     return {
       product: products_en.find((p) => p.id == this.$route.params.product),
@@ -58,6 +61,7 @@ body {
 }
 
 .info {
+  width: 50%;
   padding-left: 20px;
   font-size: 1.2rem;
 }
@@ -70,5 +74,6 @@ h2 {
   font-size: 2.4rem;
   font-weight: 200;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 </style>
