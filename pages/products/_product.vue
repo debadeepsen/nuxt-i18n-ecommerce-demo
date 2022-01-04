@@ -26,6 +26,12 @@ export default {
     };
   },
 
+  head() {
+    return {
+      title: this.product.title,
+    };
+  },
+
   mounted() {
     // hacky code, because the scoped style below doesn't seem to be working
     document.querySelector("body").style.background = "#eee";
@@ -61,8 +67,9 @@ body {
 
 .info {
   width: 50%;
-  padding-left: 20px;
+  padding-left: 40px;
   font-size: 1.2rem;
+  box-sizing: border-box;
 }
 
 h2 {
