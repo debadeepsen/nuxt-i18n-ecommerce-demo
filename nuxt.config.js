@@ -1,3 +1,7 @@
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "./utils/constants";
+import en from './i18n/en'
+import fr from './i18n/fr'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -34,7 +38,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n'
   ],
+
+  i18n: {
+    locales: SUPPORTED_LOCALES,
+    defaultLocale: DEFAULT_LOCALE,
+    vueI18n: {
+      fallbackLocale: DEFAULT_LOCALE,
+      messages: { en, fr }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

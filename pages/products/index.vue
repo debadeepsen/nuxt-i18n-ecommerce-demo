@@ -5,7 +5,7 @@
         <product-filters />
       </div>
       <div class="product-grid-col">
-        <h2>Product Inventory</h2>
+        <h2>{{ $t('productInventory') }}</h2>
         <div class="product-grid">
           <product-card v-for="p in productList" :key="p.id" :product="p" />
         </div>
@@ -32,7 +32,7 @@ export default {
 
   head() {
     return {
-      title: "Product Inventory",
+      title: this.$t('productInventory'),
     };
   },
 };
