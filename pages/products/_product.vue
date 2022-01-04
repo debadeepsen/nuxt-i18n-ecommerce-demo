@@ -1,6 +1,5 @@
 <template>
   <div class="main-container">
-    <pre>{{ JSON.stringify(product, null, 2) }}</pre>
     <div class="details">
       <div class="imgc">
         <img :src="'../img/' + product.image" />
