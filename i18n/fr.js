@@ -5,22 +5,22 @@ const fr = Object.freeze({
         french: 'Français'
     },
     filters: {
-        title: 'Des Filtres',
+        title: 'Filtres',
         type: {
-            title: 'Le Type',
+            title: 'Type',
             alarmClock: 'Réveil',
             wallClock: 'Horloge murale',
             tableClock: 'Horloge de table',
             wristWatch: 'Montre-bracelet'
         },
         colour: {
-            title: 'Le Couleur',
+            title: 'Couleur',
             red: 'Rouge',
             golden: 'Doré',
             black: 'Noir'
         },
         technology: {
-            title: 'La Technologie',
+            title: 'Technologie',
             analog: 'Analogique',
             digital: 'Numérique',
             smartWatch: 'Montre intelligente'
