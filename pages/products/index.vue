@@ -5,7 +5,7 @@
         <product-filters />
       </div>
       <div class="product-grid-col">
-        <h2>{{ $t('productInventory') }}</h2>
+        <h2>{{ $t("productInventory") }}</h2>
         <div class="product-grid">
           <product-card v-for="p in productList" :key="p.id" :product="p" />
         </div>
@@ -20,19 +20,21 @@ import ProductCard from "~/components/ProductCard.vue";
 import ProductFilters from "~/components/ProductFilters.vue";
 import ThinLine from "~/components/ThinLine.vue";
 import products_en from "~/db/en/products";
+import products_fr from "~/db/fr/products";
+import { EN } from "~/utils/constants";
 
 export default {
   components: { ThinLine, CheckBox, ProductCard, ProductFilters },
 
   data() {
     return {
-      productList: products_en,
+      productList: this.$i18n.locale == EN ? products_en : products_fr,
     };
   },
 
   head() {
     return {
-      title: this.$t('productInventory'),
+      title: this.$t("productInventory"),
     };
   },
 };
