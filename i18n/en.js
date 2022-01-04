@@ -25,6 +25,9 @@ const en = Object.freeze({
             digital: 'Digital',
             smartWatch: 'Smartwatch'
         }
+    },
+    buttons: {
+        addToCart: 'Add to Cart'
     }
 })
 

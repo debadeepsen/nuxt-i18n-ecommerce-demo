@@ -25,6 +25,9 @@ const fr = Object.freeze({
             digital: 'Numérique',
             smartWatch: 'Montre intelligente'
         }
+    },
+    buttons: {
+        addToCart: 'Ajouter au chariot'
     }
 })
 
