@@ -23,14 +23,7 @@
       <div class="product-grid-col">
         <h2>Product Inventory</h2>
         <div class="product-grid">
-          <a
-            :href="'/products/' + p.id"
-            class="product-card"
-            v-for="p in productList"
-            :key="p.id"
-          >
-            <img class="thumb" :src="'/img/' + p.image" />
-          </a>
+          <product-card v-for="p in productList" :key="p.id" :product="p" />
         </div>
       </div>
     </div>
@@ -39,11 +32,12 @@
 
 <script>
 import CheckBox from "~/components/CheckBox.vue";
+import ProductCard from "~/components/ProductCard.vue";
 import ThinLine from "~/components/ThinLine.vue";
 import products from "~/db/products";
 
 export default {
-  components: { ThinLine, CheckBox },
+  components: { ThinLine, CheckBox, ProductCard },
   data() {
     return {
       productList: products,
@@ -84,18 +78,5 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.product-card {
-  width: 240px;
-  padding: 10px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  box-shadow: 1px 1px 3px 1px #2222;
-  transition: all 0.2s;
-}
-
-.product-card:hover {
-  transform: scale(1.1);
 }
 </style>
