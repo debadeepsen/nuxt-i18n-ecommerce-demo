@@ -1,9 +1,11 @@
+import { DEFAULT_LOCALE } from '~/utils/constants'
+
 export const state = () => ({
-    counter: 0
+    locale: DEFAULT_LOCALE
 })
 
 export const mutations = {
-    increment(state) {
-        state.counter++
+    setLocale(state, locale) {
+        state.locale = locale
     }
 }

@@ -27,8 +27,8 @@
 export default {
   methods: {
     changeLocale(locale) {
-      console.log({ locale });
       this.$i18n.locale = locale;
+      this.$store.commit("setLocale", locale);
     },
 
     getButtonClass(locale) {
