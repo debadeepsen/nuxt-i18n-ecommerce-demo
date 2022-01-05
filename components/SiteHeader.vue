@@ -96,7 +96,8 @@ a > img {
 }
 
 .unselected {
-  background: #3332;
-  box-shadow: inset 1px 1px 3px #3333;
+  background: #3331;
+  /* box-shadow: inset 1px 1px 3px #3333; */
+  color: #555;
 }
 </style>

@@ -51,6 +51,10 @@ export default {
     }
   },
 
+  head () {
+    return this.$nuxtI18nHead({ addSeoAttributes: true })
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
