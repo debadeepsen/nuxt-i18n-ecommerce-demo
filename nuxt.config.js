@@ -38,9 +38,9 @@ export default {
   ],
 
   // TO BE INVESTIGATED
-  // router: {
-  //   middleware: 'main'
-  // },
+  router: {
+    middleware: 'main'
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
