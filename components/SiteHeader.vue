@@ -92,11 +92,12 @@ a > img {
 }
 
 .selected {
+  border: 1px solid #aaaa;
   box-shadow: 1px 1px 3px #3334;
 }
 
 .unselected {
-  background: #3331;
+  background: #4441;
   /* box-shadow: inset 1px 1px 3px #3333; */
   color: #555;
 }
