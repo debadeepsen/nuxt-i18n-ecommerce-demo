@@ -27,7 +27,7 @@ const fr = Object.freeze({
         }
     },
     buttons: {
-        addToCart: 'Ajouter au chariot'
+        addToCart: 'Ajouter au panier'
     }
 })
 

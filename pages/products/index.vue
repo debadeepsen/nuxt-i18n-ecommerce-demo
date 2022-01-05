@@ -15,16 +15,14 @@
 </template>
 
 <script>
-import CheckBox from "~/components/CheckBox.vue";
 import ProductCard from "~/components/ProductCard.vue";
 import ProductFilters from "~/components/ProductFilters.vue";
-import ThinLine from "~/components/ThinLine.vue";
 import products_en from "~/db/en/products";
 import products_fr from "~/db/fr/products";
 import { EN } from "~/utils/constants";
 
 export default {
-  components: { ThinLine, CheckBox, ProductCard, ProductFilters },
+  components: { ProductCard, ProductFilters },
 
   created() {
     this.$i18n.locale = this.$store.state.locale;

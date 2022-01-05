@@ -71,7 +71,7 @@ export default [
     },
     {
         id: 11,
-        title: "Montre intelligente pour l'aptitude",
+        title: "Montre intelligente pour la forme physique",
         description: "Restez dans l'air du temps avec cette belle horloge",
         image: "sw2.jpg",
         price: 350,
