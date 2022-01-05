@@ -1,21 +1,21 @@
 export default [
     {
         id: 1,
-        title: "Noir réveil",
+        title: "Réveil noir",
         description: "Restez dans l'air du temps avec cette belle horloge",
         image: "c1.jpg",
         price: 358,
     },
     {
         id: 2,
-        title: "Rouge réveil",
+        title: "Réveil rouge",
         description: "Restez dans l'air du temps avec cette belle horloge",
         image: "c2.jpg",
         price: 552,
     },
     {
         id: 3,
-        title: "Noir réveil (numérique)",
+        title: "Réveil noir (numérique)",
         description: "Restez dans l'air du temps avec cette belle horloge",
         image: "c3.jpg",
         price: 82,
