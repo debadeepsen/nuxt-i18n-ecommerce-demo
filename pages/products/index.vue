@@ -37,6 +37,12 @@ export default {
       title: this.$t("productInventory"),
     };
   },
+
+  watch: {
+    "$i18n.locale": function () {
+      this.productList = this.$i18n.locale == EN ? products_en : products_fr;
+    },
+  },
 };
 </script>
 

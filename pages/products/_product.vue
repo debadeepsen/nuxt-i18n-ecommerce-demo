@@ -8,7 +8,7 @@
         <h2>{{ product.title }}</h2>
         <div>{{ product.description }}</div>
         <div class="price">${{ product.price }}</div>
-        <button>{{ $t('buttons.addToCart') }}</button>
+        <button>{{ $t("buttons.addToCart") }}</button>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 <script>
 import products_en from "~/db/en/products";
 import products_fr from "~/db/fr/products";
-import { EN } from '~/utils/constants';
+import { EN } from "~/utils/constants";
 
 export default {
   data() {
@@ -32,6 +32,15 @@ export default {
     return {
       title: this.product.title,
     };
+  },
+
+  watch: {
+    "$i18n.locale": function () {
+      let productList = this.$i18n.locale == EN ? products_en : products_fr;
+      this.product = productList.find(
+        (p) => p.id == this.$route.params.product
+      );
+    },
   },
 };
 </script>
