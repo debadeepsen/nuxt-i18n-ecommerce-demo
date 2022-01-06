@@ -27,7 +27,10 @@ const fr = Object.freeze({
         }
     },
     buttons: {
-        addToCart: 'Ajouter au panier'
+        addToCart: {
+            title: 'Ajoutez au panier',
+            disabledTooltip: 'Ajoutez au moins un article'
+        }
     },
     shoppingCart: {
         title: 'Panier',

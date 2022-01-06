@@ -27,7 +27,10 @@ const en = Object.freeze({
         }
     },
     buttons: {
-        addToCart: 'Add to Cart'
+        addToCart: {
+            title: 'Add to Cart',
+            disabledTooltip: 'Add at least one item'
+        }
     },
     shoppingCart: {
         title: 'Shopping Cart',

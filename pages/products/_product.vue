@@ -11,7 +11,13 @@
         <div class="mb-30">
           <numeric-up-down @countChanged="countChanged" />
         </div>
-        <button @click="addToCart">{{ $t("buttons.addToCart") }}</button>
+        <button
+          :class="cartButtonClass"
+          @click="addToCart"
+          :title="disabledTooltip"
+        >
+          {{ $t("buttons.addToCart.title") }}
+        </button>
       </div>
     </div>
   </div>
@@ -38,6 +44,16 @@ export default {
     return {
       title: this.product.title,
     };
+  },
+
+  computed: {
+    cartButtonClass() {
+      return this.count < 1 ? "disabled" : "";
+    },
+
+    disabledTooltip() {
+      return this.count < 1 ? this.$t("buttons.addToCart.disabledTooltip") : "";
+    },
   },
 
   watch: {

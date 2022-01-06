@@ -41,6 +41,16 @@ button:hover {
   transform: scale(1.2);
 }
 
+button.disabled {
+  border: 1px solid #777;
+  background: linear-gradient(-5deg, #333, #898f8f);
+  color: #aaa;
+}
+
+button.disabled:hover {
+  transform: none;
+}
+
 button.outline {
   background: #fff;
   color: #111;
