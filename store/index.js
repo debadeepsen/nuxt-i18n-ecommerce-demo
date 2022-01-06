@@ -16,5 +16,9 @@ export const mutations = {
 
     removeFromCart(state, item) {
         state.cart = state.cart.filter(i => i.id !== item.id)
+    },
+
+    clearCart(state) {
+        state.cart = []
     }
 }

@@ -17,8 +17,8 @@
           <span class="qty">{{ item.count }}</span>
         </div>
       </div>
-      <div style="text-align:center; margin-top:10px">
-          <button>{{ $t("shoppingCart.clear") }}</button>
+      <div style="text-align: center; margin-top: 10px">
+        <button @click="clearCart">{{ $t("shoppingCart.clear") }}</button>
       </div>
     </div>
   </div>
@@ -31,6 +31,14 @@ export default {
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+  },
+
+  methods: {
+    clearCart() {
+      if (!confirm(this.$t("shoppingCart.clearWarning"))) return;
+
+      this.$store.commit("clearCart");
     },
   },
 };
@@ -60,7 +68,7 @@ h4 {
 
 .qty {
   display: inline-block;
-  background: #eeee;
+  background: #eee8;
   border: 1px solid #eee;
   padding: 10px;
   font-size: 1.12rem;

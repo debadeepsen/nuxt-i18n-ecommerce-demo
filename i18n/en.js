@@ -32,7 +32,8 @@ const en = Object.freeze({
     shoppingCart: {
         title: 'Shopping Cart',
         empty: 'Your shopping cart is empty',
-        clear: 'Clear shopping cart'
+        clear: 'Clear shopping cart',
+        clearWarning: 'Are you sure you want to remove all items from your cart?'
     }
 
 })
