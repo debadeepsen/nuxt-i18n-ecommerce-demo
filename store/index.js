@@ -15,7 +15,9 @@ export const mutations = {
     },
 
     addToCart(state, item) {
-        let itemIndex = state.cart.findIndex(i => i.product.id === item.id)
+        let itemIndex = state.cart.findIndex(i => i.product.id === item.product.id)
+
+        console.log({ state, itemIndex, item })
 
         if (itemIndex > -1) {
             state.cart[itemIndex].count += item.count
@@ -26,7 +28,7 @@ export const mutations = {
     },
 
     removeFromCart(state, item) {
-        state.cart = state.cart.filter(i => i.product.id !== item.id)
+        state.cart = state.cart.filter(i => i.product.id !== item.product.id)
     },
 
     clearCart(state) {

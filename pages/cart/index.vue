@@ -9,7 +9,9 @@
         <div style="display: flex">
           <img class="thumb" :src="'/img/' + item.product.image" />
           <div class="details">
-            <h4>{{ item.product.title }}</h4>
+            <a :href="'/products/' + item.product.id"
+              ><h4>{{ item.product.title }}</h4></a
+            >
             <div>{{ item.product.description }}</div>
             <div>${{ item.product.price }}</div>
           </div>
@@ -45,6 +47,12 @@ import products_en from "~/db/en/products";
 import products_fr from "~/db/fr/products";
 
 export default {
+  head() {
+    return {
+      title: this.$t("shoppingCart.title"),
+    };
+  },
+
   computed: {
     cart() {
       return this.$store.state.cart;
@@ -111,6 +119,16 @@ export default {
   padding-left: 20px;
 }
 
+.details > a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.details > a:hover {
+  text-decoration: underline;
+}
+
 h4,
 h5 {
   margin: 0;
@@ -121,7 +139,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .qty {
