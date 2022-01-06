@@ -53,6 +53,10 @@ export default {
     };
   },
 
+  mounted() {
+    this.refreshCartWithLocale();
+  },
+
   computed: {
     cart() {
       return this.$store.state.cart;
@@ -82,10 +86,8 @@ export default {
     goToProducts() {
       location.href = "/products";
     },
-  },
 
-  watch: {
-    "$i18n.locale": function () {
+    refreshCartWithLocale() {
       const productList = this.$i18n.locale == EN ? products_en : products_fr;
       let newCart = [];
       this.cart.forEach((cartItem) => {
@@ -97,6 +99,10 @@ export default {
 
       this.$store.commit("setCart", newCart);
     },
+  },
+
+  watch: {
+    "$i18n.locale": "refreshCartWithLocale",
   },
 };
 </script>
