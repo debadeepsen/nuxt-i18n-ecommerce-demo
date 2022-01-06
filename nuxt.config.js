@@ -41,11 +41,6 @@ export default {
   buildModules: [
   ],
 
-  // TO BE INVESTIGATED
-  router: {
-    middleware: 'main'
-  },
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n'
