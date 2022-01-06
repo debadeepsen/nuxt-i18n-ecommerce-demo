@@ -58,6 +58,7 @@ export default {
       if (!this.count) return;
       const item = { product: this.product, count: this.count };
       this.$store.commit("addToCart", item);
+      location.href = "/cart";
     },
   },
 };

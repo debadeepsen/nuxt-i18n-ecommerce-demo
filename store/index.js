@@ -10,12 +10,23 @@ export const mutations = {
         state.locale = locale
     },
 
+    setCart(state, cart) {
+        state.cart = cart
+    },
+
     addToCart(state, item) {
-        state.cart.push(item)
+        let itemIndex = state.cart.findIndex(i => i.product.id === item.id)
+
+        if (itemIndex > -1) {
+            state.cart[itemIndex].count += item.count
+        }
+        else {
+            state.cart.push(item)
+        }
     },
 
     removeFromCart(state, item) {
-        state.cart = state.cart.filter(i => i.id !== item.id)
+        state.cart = state.cart.filter(i => i.product.id !== item.id)
     },
 
     clearCart(state) {

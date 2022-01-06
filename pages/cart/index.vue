@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
     <h2>{{ $t("shoppingCart.title") }}</h2>
-    <div v-if="!cart || !cart.length">
+    <div v-if="cartEmpty">
       {{ $t("shoppingCart.empty") }}
     </div>
     <div v-else class="cart-items">
@@ -17,20 +17,31 @@
           <span class="qty">{{ item.count }}</span>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 10px">
-        <button @click="clearCart">{{ $t("shoppingCart.clear") }}</button>
-      </div>
+    </div>
+    <div style="text-align: center; margin-top: 10px">
+      <button class="outline" @click="goToProducts">
+        {{ $t("shoppingCart.continue") }}
+      </button>
+      <button v-if="!cartEmpty" @click="clearCart">
+        {{ $t("shoppingCart.clear") }}
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import ThinLine from "~/components/ThinLine.vue";
+import { EN } from "~/utils/constants";
+import products_en from "~/db/en/products";
+import products_fr from "~/db/fr/products";
+
 export default {
-  components: { ThinLine },
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+
+    cartEmpty() {
+      return !this.$store.state.cart || !this.$store.state.cart.length;
     },
   },
 
@@ -39,6 +50,25 @@ export default {
       if (!confirm(this.$t("shoppingCart.clearWarning"))) return;
 
       this.$store.commit("clearCart");
+    },
+
+    goToProducts() {
+      location.href = "/products";
+    },
+  },
+
+  watch: {
+    "$i18n.locale": function () {
+      const productList = this.$i18n.locale == EN ? products_en : products_fr;
+      let newCart = [];
+      this.cart.forEach((cartItem) => {
+        newCart.push({
+          product: productList.find((p) => p.id === cartItem.product.id),
+          count: cartItem.count,
+        });
+      });
+
+      this.$store.commit("setCart", newCart);
     },
   },
 };

@@ -26,7 +26,7 @@ h6 {
 }
 
 button {
-  border: none;
+  border: 1px solid #111;
   outline: none;
   background: linear-gradient(-5deg, #111, #677171);
   color: #fff;
@@ -39,6 +39,12 @@ button {
 
 button:hover {
   transform: scale(1.2);
+}
+
+button.outline {
+  background: #fff;
+  color: #111;
+  border: 1px solid #111;
 }
 
 .main-container {

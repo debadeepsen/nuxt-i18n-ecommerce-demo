@@ -32,7 +32,8 @@ const fr = Object.freeze({
     shoppingCart: {
         title: 'Panier',
         empty: 'Votre panier est vide',
-        clear: 'Vider le panier',
+        continue: 'Achetez plus',
+        clear: 'Videz le panier',
         clearWarning: 'Voulez-vous vraiment supprimer tous les articles de votre panier?'
     }
 })
