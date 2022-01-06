@@ -34,7 +34,7 @@ export default {};
 
 <style scoped>
 .filters {
-  width: 15.8%;
+  width: 15.6%;
   position: fixed;
 }
 

@@ -34,7 +34,9 @@ const fr = Object.freeze({
         empty: 'Votre panier est vide',
         continue: 'Achetez plus',
         clear: 'Videz le panier',
-        clearWarning: 'Voulez-vous vraiment supprimer tous les articles de votre panier?'
+        clearWarning: 'Voulez-vous vraiment supprimer tous les articles de votre panier?',
+        payment: 'Paiement',
+        total: 'Total'
     }
 })
 

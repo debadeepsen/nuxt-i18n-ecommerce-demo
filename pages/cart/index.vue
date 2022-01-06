@@ -11,6 +11,7 @@
           <div class="details">
             <h4>{{ item.product.title }}</h4>
             <div>{{ item.product.description }}</div>
+            <div>${{ item.product.price }}</div>
           </div>
         </div>
         <div>
@@ -18,12 +19,21 @@
         </div>
       </div>
     </div>
+    <div class="total-row">
+      <div>
+        <h5>{{ $t("shoppingCart.total") }}</h5>
+      </div>
+      <div class="total">${{ cartTotal }}</div>
+    </div>
     <div style="text-align: center; margin-top: 10px">
       <button class="outline" @click="goToProducts">
         {{ $t("shoppingCart.continue") }}
       </button>
-      <button v-if="!cartEmpty" @click="clearCart">
+      <button class="danger" v-if="!cartEmpty" @click="clearCart">
         {{ $t("shoppingCart.clear") }}
+      </button>
+      <button v-if="!cartEmpty">
+        {{ $t("shoppingCart.payment") }}
       </button>
     </div>
   </div>
@@ -42,6 +52,15 @@ export default {
 
     cartEmpty() {
       return !this.$store.state.cart || !this.$store.state.cart.length;
+    },
+
+    cartTotal() {
+      let total = 0;
+      this.$store.state.cart.forEach((item) => {
+        total += item.count * item.product.price;
+      });
+
+      return total;
     },
   },
 
@@ -92,8 +111,17 @@ export default {
   padding-left: 20px;
 }
 
-h4 {
+h4,
+h5 {
   margin: 0;
+}
+
+button {
+  width: 180px;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .qty {
@@ -107,5 +135,21 @@ h4 {
   min-width: 30px;
   text-align: center;
   border-radius: 3px;
+}
+
+.total-row {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  font-size: 1.35rem;
+}
+
+.total-row > div {
+  width: 50%;
+}
+
+.total {
+  text-align: right;
+  padding-right: 10px;
 }
 </style>

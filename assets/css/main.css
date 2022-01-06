@@ -47,6 +47,12 @@ button.outline {
   border: 1px solid #111;
 }
 
+button.danger {
+  border: 1px solid #540000;
+  background: linear-gradient(-5deg, #421d1d, #830a0a);
+  color: #fff;
+}
+
 .main-container {
   width: 80%;
   margin: 30px auto;
