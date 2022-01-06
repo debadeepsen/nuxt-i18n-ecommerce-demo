@@ -7,24 +7,30 @@
       <div class="info">
         <h2>{{ product.title }}</h2>
         <div>{{ product.description }}</div>
-        <div class="price">${{ product.price }}</div>
-        <button>{{ $t("buttons.addToCart") }}</button>
+        <div class="price mb-30">${{ product.price }}</div>
+        <div class="mb-30">
+          <numeric-up-down @countChanged="countChanged" />
+        </div>
+        <button @click="addToCart">{{ $t("buttons.addToCart") }}</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import NumericUpDown from "~/components/NumericUpDown.vue";
 import products_en from "~/db/en/products";
 import products_fr from "~/db/fr/products";
 import { EN } from "~/utils/constants";
 
 export default {
+  components: { NumericUpDown },
   data() {
     let productList = this.$i18n.locale == EN ? products_en : products_fr;
     let product = productList.find((p) => p.id == this.$route.params.product);
     return {
       product,
+      count: 0,
     };
   },
 
@@ -46,19 +52,22 @@ export default {
       );
     },
   },
+
+  methods: {
+    countChanged(count) {
+      this.count = count;
+    },
+
+    addToCart() {
+      if (!this.count) return;
+      const item = { product: this.product, count: this.count };
+      this.$store.commit("addToCart", item);
+    },
+  },
 };
 </script>
 
 <style scoped>
-.main-container {
-  width: 80%;
-  margin: 30px auto;
-  background: #fff;
-  box-shadow: 2px 2px 8px #3333;
-  padding: 20px;
-  padding-top: 70px;
-}
-
 .details {
   display: flex;
   flex-direction: row;
@@ -87,6 +96,9 @@ h2 {
   font-size: 2.4rem;
   font-weight: 200;
   margin-top: 10px;
+}
+
+.mb-30 {
   margin-bottom: 30px;
 }
 </style>

@@ -7,7 +7,7 @@ import cookie from 'cookie';
 
 export default ({ store, req }) => {
     createPersistedState({
-        paths: ['locale'],
+        paths: ['locale', 'cart'],
         storage: {
             getItem: (key) => {
                 // See https://nuxtjs.org/guide/plugins/#using-process-flags

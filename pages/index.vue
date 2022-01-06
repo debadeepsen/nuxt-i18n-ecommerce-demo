@@ -5,7 +5,7 @@
 <script>
 export default {
   mounted() {
-    location.replace("/products");
+    // location.replace("/products");
   },
 };
 </script>

@@ -52,12 +52,12 @@ export default {
 .list-container {
   display: flex;
   flex-direction: row;
-  padding-top: 70px;
 }
 
 .filter-col {
   width: 16%;
   padding: auto 20px;
+  background: #fff;
 }
 
 .product-grid-col {

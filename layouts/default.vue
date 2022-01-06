@@ -1,7 +1,9 @@
 <template>
   <div>
     <site-header />
-    <nuxt />
+    <div style="padding-top: 60px">
+      <nuxt />
+    </div>
   </div>
 </template>
 

@@ -29,6 +29,7 @@ export default {
   text-align: center;
   text-decoration: none;
   color: #222;
+  background: #fff;
 }
 
 .product-card:hover {

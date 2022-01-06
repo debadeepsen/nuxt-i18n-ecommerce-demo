@@ -12,6 +12,7 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
+  background-color: #aa91;
 }
 
 h1,
@@ -37,4 +38,13 @@ button {
 
 button:hover {
   transform: scale(1.2);
+}
+
+.main-container {
+  width: 80%;
+  margin: 30px auto;
+  background: #fff;
+  box-shadow: 2px 2px 8px #3333;
+  padding: 20px;
+  padding-top: 70px;
 }
