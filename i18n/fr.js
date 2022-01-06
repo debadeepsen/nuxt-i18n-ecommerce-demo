@@ -28,6 +28,11 @@ const fr = Object.freeze({
     },
     buttons: {
         addToCart: 'Ajouter au panier'
+    },
+    shoppingCart: {
+        title: 'Panier',
+        empty: 'Votre panier est vide',
+        clear: 'Vider le panier'
     }
 })
 

@@ -28,7 +28,7 @@ export default {
   display: inline-block;
   width: 22px;
   height: 22px;
-  border: 1px solid #888;
+  border: 1px solid #8885;
   background: #fff;
   margin-right: 6px;
 }

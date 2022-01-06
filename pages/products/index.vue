@@ -24,10 +24,6 @@ import { EN } from "~/utils/constants";
 export default {
   components: { ProductCard, ProductFilters },
 
-  created() {
-    this.$i18n.locale = this.$store.state.locale;
-  },
-
   data() {
     return {
       productList: this.$i18n.locale == EN ? products_en : products_fr,

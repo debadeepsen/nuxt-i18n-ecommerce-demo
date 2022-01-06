@@ -34,10 +34,6 @@ export default {
     };
   },
 
-  created() {
-    this.$i18n.locale = this.$store.state.locale;
-  },
-
   head() {
     return {
       title: this.product.title,

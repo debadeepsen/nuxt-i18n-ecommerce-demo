@@ -28,7 +28,13 @@ const en = Object.freeze({
     },
     buttons: {
         addToCart: 'Add to Cart'
+    },
+    shoppingCart: {
+        title: 'Shopping Cart',
+        empty: 'Your shopping cart is empty',
+        clear: 'Clear shopping cart'
     }
+
 })
 
 export default en

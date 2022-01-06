@@ -11,6 +11,10 @@
 import SiteHeader from "~/components/SiteHeader.vue";
 export default {
   components: { SiteHeader },
+
+  created() {
+    this.$i18n.locale = this.$store.state.locale;
+  },
 };
 </script>
 
