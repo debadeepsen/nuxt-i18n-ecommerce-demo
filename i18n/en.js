@@ -1,5 +1,6 @@
 const en = Object.freeze({
     productInventory: 'Product Inventory',
+    warning: 'Warning',
     languages: {
         english: 'English',
         french: 'French'

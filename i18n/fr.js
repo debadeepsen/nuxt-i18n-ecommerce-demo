@@ -1,5 +1,6 @@
 const fr = Object.freeze({
     productInventory: 'Inventaire des produits',
+    warning: 'Avertissement',
     languages: {
         english: 'Anglais',
         french: 'Français'
@@ -33,8 +34,8 @@ const fr = Object.freeze({
         },
         dialog: {
             ok: "Ok",
-            yes: "Yes",
-            no: "No"
+            yes: "Oui",
+            no: "Non"
         }
     },
     shoppingCart: {

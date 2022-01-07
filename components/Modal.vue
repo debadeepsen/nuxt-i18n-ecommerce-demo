@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-bg">
+  <div v-show="dialog" class="modal-bg">
     <div class="modal">
       <div class="title">
         <strong>{{ title }}</strong>
@@ -8,7 +8,13 @@
         {{ text }}
       </div>
       <div class="buttons">
-        <button v-for="(btn, i) in buttonDetails" :key="i" @click="handleClick(btn.caption)">
+        <button
+          v-for="(btn, i) in buttonDetails"
+          :key="i"
+          @click="handleClick(btn)"
+          style="margin-right: 10px"
+          :class="btn.class"
+        >
           {{ btn.caption }}
         </button>
       </div>
@@ -19,6 +25,10 @@
 <script>
 export default {
   props: {
+    dialog: {
+      type: Boolean,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -47,12 +57,12 @@ export default {
           {
             caption: this.$t("buttons.dialog.yes"),
             class: "outline",
-            dialogResult: "yes"
+            dialogResult: "yes",
           },
           {
             caption: this.$t("buttons.dialog.no"),
             class: "",
-            dialogResult: "no"
+            dialogResult: "no",
           },
         ];
         break;
@@ -61,11 +71,17 @@ export default {
           {
             caption: this.$t("buttons.dialog.ok"),
             class: "",
-            dialogResult: "ok"
+            dialogResult: "ok",
           },
         ];
         break;
     }
+  },
+
+  methods: {
+    handleClick(btn) {
+      this.$emit("dialogClosed", btn.dialogResult);
+    },
   },
 };
 </script>
@@ -73,7 +89,7 @@ export default {
 <style scoped>
 .modal-bg {
   position: absolute;
-  background: #4448;
+  background: #222a;
   left: 0;
   top: 0;
   width: 100vw;
@@ -85,6 +101,7 @@ export default {
 }
 
 .modal {
+  margin-top: -200px;
   background: #fff;
   width: 350px;
   min-height: 100px;

@@ -38,6 +38,13 @@
         {{ $t("shoppingCart.payment") }}
       </button>
     </div>
+    <modal
+      buttons="YesNo"
+      :title="$t('warning')"
+      :text="$t('shoppingCart.clearWarning')"
+      :dialog="confirmDialogOpen"
+      @dialogClosed="confirmDialogClosed"
+    />
   </div>
 </template>
 
@@ -45,8 +52,10 @@
 import { EN } from "~/utils/constants";
 import products_en from "~/db/en/products";
 import products_fr from "~/db/fr/products";
+import Modal from "~/components/Modal.vue";
 
 export default {
+  components: { Modal },
   head() {
     return {
       title: this.$t("shoppingCart.title"),
@@ -55,6 +64,12 @@ export default {
 
   mounted() {
     this.refreshCartWithLocale();
+  },
+
+  data() {
+    return {
+      confirmDialogOpen: false,
+    };
   },
 
   computed: {
@@ -77,10 +92,14 @@ export default {
   },
 
   methods: {
-    clearCart() {
-      if (!confirm(this.$t("shoppingCart.clearWarning"))) return;
+    confirmDialogClosed(dialogResult) {
+      this.confirmDialogOpen = false;
 
-      this.$store.commit("clearCart");
+      if (dialogResult === "yes") this.$store.commit("clearCart");
+    },
+
+    clearCart() {
+      this.confirmDialogOpen = true;
     },
 
     goToProducts() {

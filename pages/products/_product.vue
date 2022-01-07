@@ -20,7 +20,13 @@
         </button>
       </div>
     </div>
-    <!-- <modal title="Hello World" text="How are you?" /> -->
+    <!-- <modal
+      title="Hello World"
+      text="How are you?"
+      buttons="YesNo"
+      :dialog="dialogOpen"
+      @dialogClosed="dialogClosed"
+    /> -->
   </div>
 </template>
 
@@ -39,6 +45,7 @@ export default {
     return {
       product,
       count: 0,
+      dialogOpen: true,
     };
   },
 
@@ -73,6 +80,11 @@ export default {
       const item = { product: this.product, count: this.count };
       this.$store.commit("addToCart", item);
       location.href = "/cart";
+    },
+
+    dialogClosed(dialogResult) {
+      this.dialogOpen = false;
+      alert(dialogResult);
     },
   },
 };
