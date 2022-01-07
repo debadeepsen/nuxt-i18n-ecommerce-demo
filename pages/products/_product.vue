@@ -9,7 +9,7 @@
         <div>{{ product.description }}</div>
         <div class="price mb-30">${{ product.price }}</div>
         <div class="mb-30">
-          <numeric-up-down @countChanged="countChanged" />
+          <numeric-up-down v-model="count" />
         </div>
         <button
           :class="cartButtonClass"
@@ -66,10 +66,6 @@ export default {
   },
 
   methods: {
-    countChanged(count) {
-      this.count = count;
-    },
-
     addToCart() {
       if (!this.count) return;
       const item = { product: this.product, count: this.count };

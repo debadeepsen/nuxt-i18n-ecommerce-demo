@@ -7,24 +7,31 @@
 </template>
 
 <script>
-import { EVENTS } from "~/utils/constants";
 export default {
+  props: {
+    value: {
+      type: Number,
+      required: false,
+      default: 0,
+    }
+  },
+
   data() {
     return {
-      count: 0,
+      count: this.value,
     };
   },
 
   methods: {
     increment() {
       this.count++;
-      this.$emit(EVENTS.COUNT_CHANGED, this.count);
+      this.$emit("input", this.count);
     },
 
     decrement() {
       if (this.count === 0) return;
       this.count--;
-      this.$emit(EVENTS.COUNT_CHANGED, this.count);
+      this.$emit("input", this.count);
     },
   },
 };
