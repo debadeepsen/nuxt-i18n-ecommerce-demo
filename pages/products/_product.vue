@@ -20,17 +20,19 @@
         </button>
       </div>
     </div>
+    <!-- <modal title="Hello World" text="How are you?" /> -->
   </div>
 </template>
 
 <script>
+import Modal from "~/components/Modal.vue";
 import NumericUpDown from "~/components/NumericUpDown.vue";
 import products_en from "~/db/en/products";
 import products_fr from "~/db/fr/products";
 import { EN } from "~/utils/constants";
 
 export default {
-  components: { NumericUpDown },
+  components: { NumericUpDown, Modal },
   data() {
     let productList = this.$i18n.locale == EN ? products_en : products_fr;
     let product = productList.find((p) => p.id == this.$route.params.product);

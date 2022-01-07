@@ -30,6 +30,11 @@ const fr = Object.freeze({
         addToCart: {
             title: 'Ajoutez au panier',
             disabledTooltip: 'Ajoutez au moins un article'
+        },
+        dialog: {
+            ok: "Ok",
+            yes: "Yes",
+            no: "No"
         }
     },
     shoppingCart: {
