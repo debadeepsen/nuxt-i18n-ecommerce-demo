@@ -103,7 +103,7 @@ export default {
     },
 
     goToProducts() {
-      location.href = "/products";
+      this.$router.push("/products");
     },
 
     refreshCartWithLocale() {

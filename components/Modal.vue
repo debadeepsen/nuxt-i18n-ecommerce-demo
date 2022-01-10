@@ -15,7 +15,7 @@
           style="margin-right: 10px"
           :class="btn.class"
         >
-          {{ btn.caption }}
+          {{ $t(btn.caption) }}
         </button>
       </div>
     </div>
@@ -55,12 +55,12 @@ export default {
       case "YesNo":
         this.buttonDetails = [
           {
-            caption: this.$t("buttons.dialog.yes"),
+            caption: "yes",
             class: "outline",
             dialogResult: "yes",
           },
           {
-            caption: this.$t("buttons.dialog.no"),
+            caption: "no",
             class: "",
             dialogResult: "no",
           },
@@ -69,7 +69,7 @@ export default {
       default:
         this.buttonDetails = [
           {
-            caption: this.$t("buttons.dialog.ok"),
+            caption: "ok",
             class: "",
             dialogResult: "ok",
           },
